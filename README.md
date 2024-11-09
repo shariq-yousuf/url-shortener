@@ -2,4 +2,4 @@
 
 Node.js application that generates short, unique URLs to redirect to longer destination URLs.
 
-[Try it here...]()
+[Try it here...](https://url-shortener-sy.up.railway.app/)

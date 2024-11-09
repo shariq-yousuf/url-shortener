@@ -21,10 +21,16 @@ app.get("/api/hello", (req, res) => {
 
 app.post("/api/shorturl", (req, res) => {
   const reqUrl = req.body.url
-  try {
-    new URL(reqUrl)
-  } catch (error) {
-    res.json({ error: "Invalid URL" })
+  // try {
+  //   new URL(reqUrl)
+  // } catch (error) {
+  //   res.json({ error: "invalid url" })
+  // }
+  const protocolRegex = /^\D{3,5}:\/\//
+  if (!protocolRegex.test(reqUrl)) {
+    return res.json({
+      error: "invalid url",
+    })
   }
 
   let shortURL = ""
